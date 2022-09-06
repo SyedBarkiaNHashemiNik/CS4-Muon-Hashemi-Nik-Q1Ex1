@@ -1,0 +1,37 @@
+class Main {  
+  int rockMass = 5;
+  String rockTexture = "Rough";
+  String rockMatchup = "Scissor";
+  boolean rockMatchupValue = true;
+  
+
+  byte scissorMass = 3;
+  String scissorTexture = "Smooth";
+  String scissorMatchup = "Paper";
+  boolean scissorMatchupValue = false;
+
+  byte paperMass = 2;
+  String paperTexture = "Smooth";
+  String paperMatchup = "Rock";
+  boolean paperMatchupValue = true;
+  
+  
+  public static void main(String[] args) {
+   Main objInfo = new Main();
+
+   String newLine = System.getProperty("line.separator");
+   
+    
+   System.out.println("Rock" + newLine + "Mass: " + objInfo.rockMass + newLine + "Texture: " + objInfo.rockTexture + newLine + "Wins Against: " + objInfo.rockMatchup + newLine);
+    
+   System.out.println("Scissor" + newLine + "Mass: " + objInfo.scissorMass + newLine + "Texture: " + objInfo.scissorTexture + newLine + "Wins Against: " + objInfo.scissorMatchup + newLine);
+    
+   System.out.println("Paper" + newLine + "Mass: " + objInfo.paperMass + newLine + "Texture: " + objInfo.paperTexture + newLine + "Wins Against: " + objInfo.paperMatchup + newLine);
+
+   System.out.println("Total mass of all the objects: " + (objInfo.rockMass + objInfo.scissorMass + objInfo.paperMass) + newLine);
+
+   
+  }
+
+  
+}
