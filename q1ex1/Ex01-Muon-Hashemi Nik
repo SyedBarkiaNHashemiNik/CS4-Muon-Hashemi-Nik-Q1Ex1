@@ -1,34 +1,59 @@
-class Main {  
-  int rockMass = 5;
-  String rockTexture = "Rough";
-  String rockMatchup = "Scissor";
-  boolean rockMatchupValue = true;
-  
+import java.util.Scanner;
 
-  byte scissorMass = 3;
-  String scissorTexture = "Smooth";
-  String scissorMatchup = "Paper";
-  boolean scissorMatchupValue = false;
+class Rock {
+ byte rockMass = 5;
+ String rockTexture = "Rough";
+ String rockMatchup = "Scissor";
+ byte rockMatchupValue = 1;
+  }
 
-  byte paperMass = 2;
-  String paperTexture = "Smooth";
-  String paperMatchup = "Rock";
-  boolean paperMatchupValue = true;
-  
-  
+class Scissors {
+ byte scissorMass = 3;
+ String scissorTexture = "Smooth";
+ String scissorMatchup = "Paper";
+ byte scissorMatchupValue = 2;
+}
+
+class Paper {
+ byte paperMass = 2;
+ String paperTexture = "Smooth";
+ String paperMatchup = "Rock";
+ byte paperMatchupValue = 3;
+}
+
+
+class Main {   
   public static void main(String[] args) {
-   Main objInfo = new Main();
+    Rock rockInfo = new Rock();
+    Scissors scissorsInfo = new Scissors();
+    Paper paperInfo = new Paper();
 
-   String newLine = System.getProperty("line.separator");
+    String newLine = System.getProperty("line.separator");
+    Scanner userInput = new Scanner(System. in );
    
     
-   System.out.println("Rock" + newLine + "Mass: " + objInfo.rockMass + newLine + "Texture: " + objInfo.rockTexture + newLine + "Wins Against: " + objInfo.rockMatchup + newLine);
+    System.out.println("Rock" + newLine + "Mass: " + rockInfo.rockMass + newLine + "Texture: " + rockInfo.rockTexture + newLine + "Wins Against: " + rockInfo.rockMatchup + newLine);
     
-   System.out.println("Scissor" + newLine + "Mass: " + objInfo.scissorMass + newLine + "Texture: " + objInfo.scissorTexture + newLine + "Wins Against: " + objInfo.scissorMatchup + newLine);
+    System.out.println("Scissor" + newLine + "Mass: " + scissorsInfo.scissorMass + newLine + "Texture: " + scissorsInfo.scissorTexture + newLine + "Wins Against: " + scissorsInfo.scissorMatchup + newLine);
     
-   System.out.println("Paper" + newLine + "Mass: " + objInfo.paperMass + newLine + "Texture: " + objInfo.paperTexture + newLine + "Wins Against: " + objInfo.paperMatchup + newLine);
+    System.out.println("Paper" + newLine + "Mass: " + paperInfo.paperMass + newLine + "Texture: " + paperInfo.paperTexture + newLine + "Wins Against: " + paperInfo.paperMatchup + newLine);
 
-   System.out.println("Total mass of all the objects: " + (objInfo.rockMass + objInfo.scissorMass + objInfo.paperMass) + newLine);
+    System.out.println("Total mass of all the objects: " + (rockInfo.rockMass + scissorsInfo.scissorMass + paperInfo.paperMass) + newLine);
+
+    System.out.println("rock, paper or scissor?" + newLine);
+    String choice1 = userInput.nextLine();
+    System.out.println("rock, paper or scissor?" + newLine);
+    String choice2 = userInput.nextLine();
+
+    if (choice1.equals(choice2)) {
+      System.out.println("Tie");
+    }
+    else {
+      choice1 = rockInfo;
+      System.out.println(choice1.rockMass);
+    }
+    
+    
 
    
   }
