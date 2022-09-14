@@ -4,25 +4,77 @@ class Rock {
  byte rockMass = 5;
  String rockTexture = "Rough";
  String rockMatchup = "Scissor";
- byte rockMatchupValue = 1;
   }
 
 class Scissors {
  byte scissorMass = 3;
  String scissorTexture = "Smooth";
  String scissorMatchup = "Paper";
- byte scissorMatchupValue = 2;
 }
 
 class Paper {
  byte paperMass = 2;
  String paperTexture = "Smooth";
  String paperMatchup = "Rock";
- byte paperMatchupValue = 3;
 }
 
 
-class Main {   
+class Main {  
+  public static void compareObjects(String a,String b) {
+    
+      if ((a.equals("rock")) || (a.equals("scissors")) || 
+      (a.equals("paper"))) {
+    
+        if ((b.equals("rock")) || (b.equals("scissors")) || 
+        (b.equals("paper"))) {
+
+          if (a.equals(b))
+            System.out.println ("It's a tie");
+          else {
+             
+           if ((a.equals("rock") && b. equals("scissors")) || 
+           (a.equals("scissors") && b.equals("paper")) || 
+           (a.equals("paper") && b.equals("rock")))    
+            System.out.println (a + " wins against " + b);
+          else
+            System.out.println (a + " loses to " + b);
+          }  
+      }
+        else 
+          System.out.println("Invalid");    
+    }
+      else 
+        System.out.println("Invalid");
+    
+  }
+
+  public static void compareTexture(String a, String b) {
+    
+    if ((a.equals("rock")) || (a.equals("scissors")) || 
+      (a.equals("paper"))) {
+    
+        if ((b.equals("rock")) || (b.equals("scissors")) || 
+        (b.equals("paper"))) {
+    
+         if (a.equals(b))
+           System.out.println("They have the same texture");
+         else {
+      
+           if ((a.equals("rock")) || (b.equals("rock"))) {
+             System.out.println(a + " does not have the same texture as " + b);
+           }
+           else 
+             System.out.println("They have the same texture");
+      
+         }
+       }
+        else 
+          System.out.println("Invalid");
+    }
+    else
+      System.out.println("Invalid");
+  }
+  
   public static void main(String[] args) {
     Rock rockInfo = new Rock();
     Scissors scissorsInfo = new Scissors();
@@ -38,25 +90,14 @@ class Main {
     
     System.out.println("Paper" + newLine + "Mass: " + paperInfo.paperMass + newLine + "Texture: " + paperInfo.paperTexture + newLine + "Wins Against: " + paperInfo.paperMatchup + newLine);
 
-    System.out.println("Total mass of all the objects: " + (rockInfo.rockMass + scissorsInfo.scissorMass + paperInfo.paperMass) + newLine);
+    System.out.println("Total mass of all the objects: " + (rockInfo.rockMass + scissorsInfo.scissorMass + paperInfo.paperMass) + newLine); // addition
 
-    System.out.println("rock, paper or scissor?" + newLine);
+    
+
+    System.out.println("rock, paper or scissors?");
     String choice1 = userInput.nextLine();
-    System.out.println("rock, paper or scissor?" + newLine);
+    System.out.println("rock, paper or scissor?");
     String choice2 = userInput.nextLine();
 
-    if (choice1.equals(choice2)) {
-      System.out.println("Tie");
-    }
-    else {
-      choice1 = rockInfo;
-      System.out.println(choice1.rockMass);
-    }
-    
-    
-
-   
-  }
-
-  
-}
+    compareObjects(choice1,choice2); // comparison
+    compareTexture(choice1, choice2); // comparison
